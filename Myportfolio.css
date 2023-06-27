@@ -1,0 +1,705 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: ;
+    --secondary-color: crimson;
+    --white: #eee;
+    --black: #111;
+    --gradient: linear-gradient(to right, var(--primary), var(--secondary-color));
+
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2rem;
+    background-color: black;
+    position: fixed;
+    z-index: 2;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-decoration: underline;
+    text-decoration-color: var(--secondary-color);
+}
+
+.logo span {
+    font-weight: 900;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    position: absolute;
+    left: 20rem;
+}
+
+.navbar ul a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1rem;
+    font-family: sans-serif;
+    position: relative;
+    transition: 500ms;
+}
+
+.navbar ul a::before {
+    content: "";
+    position: absolute;
+    bottom: -0.3rem;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease-out;
+}
+
+.navbar ul a:hover::before {
+    width: 50%;
+}
+
+.navbar button {
+    width: 90px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    display: flex-start;
+    justify-content: flex-end;
+}
+
+.navbar button:hover {
+    color: white;
+    background-color: black;
+}
+
+nav.navbar .hamburger {
+    color: white;
+    font-size: 1.5rem;
+    transition: 200ms;
+    cursor: pointer;
+    display: none;
+}
+
+nav.navbar .hamburger:hover {
+    color: var(--secondary-color);
+}
+
+.mobile-navbar {
+    display: none;
+}
+
+main.hero {
+    width: 100%;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 500px;
+    /* position: relative; */
+    background-color: black;
+}
+
+.hero .heroText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.8rem;
+    height: 100%;
+    width: 100%;
+    padding-left: 2rem;
+    position: relative;
+    top: 7rem;
+}
+
+.hero .heroImg .imgholder {
+    width: 90%;
+    height: 590px;
+    justify-content: flex-start;
+}
+
+.hero .heroImg .imgholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: black;
+    filter: grayscale(1);
+}
+
+.hero .heroText h1 {
+    font-size: 1.2rem;
+    color: transparent;
+    background-clip: text;
+    background: var(--white);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: sans-serif;
+    font-weight: 300;
+    word-spacing: 0.8rem;
+    text-transform: uppercase;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid crimson;
+    position: relative;
+    top: -20rem;
+    left: 36.2rem;
+}
+
+.hero .heroText p {
+    color: var(--white);
+    font-size: 1.5cm;
+    text-align: justify;
+}
+
+.hero .heroText i {
+    color: crimson;
+    font-size: 5rem;
+}
+
+.hero .heroText i:hover {
+    color: white;
+    margin-left: 30px;
+}
+
+.hero .heroText p:last-of-type {
+    font-size: 1.2rem;
+    word-spacing: 0.8rem;
+}
+
+.hero .heroText a {
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 30px;
+    background-color: var(--secondary-color);
+    color: var(--primary);
+    border-radius: 12px;
+    font-weight: 500;
+    font-family: sans-serif;
+    position: relative;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    transition: 200ms ease-in;
+}
+
+.hero .heroText a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: var(--primary);
+    transition: 200ms ease-in;
+    z-index: -1;
+}
+
+.hero .heroText a:hover {
+    color: var(--white);
+    border: 3px solid #eee;
+}
+
+.hero .heroText a:hover::before {
+    height: 100%;
+}
+
+section.About {
+    width: 100%;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 450px;
+    position: relative;
+    /* top: 20cm; */
+    background-color: black;
+}
+
+.About .AboutText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.8rem;
+    height: 100%;
+    width: 100%;
+    padding-left: 2rem;
+}
+
+
+.About .AboutImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.About .AboutImg .imgholder {
+    width: 450px;
+    height: 450px;
+    position: relative;
+    top: 2rem;
+    filter: grayscale(1);
+}
+
+.About .AboutImg .imgholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.About .AboutText h1 {
+    font-size: 1.2cm;
+    color: var(--white);
+    background-clip: text;
+    background: var(--white);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: sans-serif;
+    font-weight: 600;
+    word-spacing: 0.8rem;
+}
+
+.About .AboutText h3 {
+    font-size: 1.2rem;
+    color: var(--white);
+    font-family: sans-serif;
+    font-weight: 400;
+    word-spacing: 0.8rem;
+}
+
+.About .AboutText p {
+    color: var(--white);
+    font-size: 1.2rem;
+    text-align: justify;
+    line-height: 2rem;
+}
+
+.About button {
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    font-weight: 500;
+    transition: 200ms ease-in;
+}
+
+
+.About button:hover {
+    color: var(--white);
+    border: 3px solid #eee;
+    background-color: var(--primary);
+}
+
+main.services {
+    width: 100%;
+    height: 420px;
+    gap: 2rem;
+    background-color: rgb(17, 16, 16);
+}
+
+main.services h1 {
+    color: white;
+    text-align: center;
+}
+
+.pro {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.4rem;
+    background-color: black;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 14px 14px black;
+    z-index: 1;
+}
+
+main.services .Aboutwrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    margin-left: 4rem;
+    border-radius: 10px;
+    padding: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    top: -3rem;
+    left: -2.5rem;
+    justify-content: center;
+}
+
+main.services button {
+    font-size: 1rem;
+    padding: 8px 15px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: 3px solid crimson;
+    border-radius: 12px;
+    font-weight: 500;
+    font-family: sans-serif;
+    overflow: hidden;
+    transition: 200ms ease-in;
+}
+
+main.services button:hover {
+    color: var(--white);
+    background-color: black;
+}
+
+main.services>div h3 {
+    color: var(--secondary-color);
+    font-family: sans-serif;
+    font-size: 1.5rem;
+}
+
+main.services>div p {
+    color: var(--white);
+    font-size: 1.1rem;
+    text-align: justify;
+    line-height: 30px;
+}
+
+main.services>div i {
+    color: var(--secondary-color);
+    font-size: 2rem;
+}
+
+main.services .Aboutwrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    margin-left: 4rem;
+    border-radius: 10px;
+    padding: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    top: -1rem;
+}
+
+section#Me {
+    background-color: black;
+    width: 100%;
+    height: 300px;
+}
+
+#Me h1 {
+    text-align: center;
+    justify-self: center;
+    align-items: center;
+    font-size: 3rem;
+    color: var(--white);
+    position: relative;
+    top: 5rem;
+}
+
+#Me a {
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 30px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: 3px solid crimson;
+    border-radius: 12px;
+    font-weight: 500;
+    font-family: sans-serif;
+    position: relative;
+    top: 9rem;
+    left: 34rem;
+    overflow: hidden;
+    transition: 200ms ease-in;
+}
+
+#Me a:hover {
+    color: var(--white);
+    background-color: black;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: black;
+}
+
+.copyright {
+    text-align: center;
+    position: relative;
+    top: 3rem;
+    justify-content: center;
+}
+
+.copyright p {
+    color: white;
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 767px) {
+    nav.navbar {
+        padding-inline: 1rem;
+    }
+
+    nav.navbar ul {
+        display: none;
+    }
+
+    nav.navbar .hamburger {
+        display: block;
+    }
+
+    .hero .heroText i {
+        color: crimson;
+        font-size: 5rem;
+        position: relative;
+        left: 0;
+    }
+
+    .mobile-navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 999;
+        padding-inline: 2rem;
+        transition: 0.5s ease-out all;
+    }
+
+    .mobile-navbar header {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+        padding-top: 1rem;
+    }
+
+    .mobile-navbar header .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        width: 100%;
+    }
+
+    .mobile-navbar header .top a {
+        text-decoration: none;
+        color: var(--secondary-color);
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        font-size: 300;
+    }
+
+    .mobile-navbar header .top a span {
+        font-weight: 900;
+        font-family: sans-serif;
+        font-size: 0.9rem;
+    }
+
+    .mobile-navbar header .top .hamburger {
+        color: var(--white);
+        font-size: 1.5rem;
+        transition: 200ms;
+    }
+
+    .mobile-navbar header .top .hamburger:hover {
+        color: var(--secondary-color);
+    }
+
+    .mobile-navbar header ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-navbar header ul li {
+        margin-bottom: 1.5rem;
+    }
+
+    .mobile-navbar header ul li a {
+        text-decoration: none;
+        color: var(--white);
+        font-size: 1rem;
+        font-family: sans-serif;
+        transition: 500ms;
+    }
+
+    .mobile-navbar header ul li a:hover {
+        color: var(--secondary-color);
+        margin-left: 10px;
+    }
+
+    main.hero {
+        height: 700px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .hero .heroImg .imgholder {
+        width: 400px;
+        height: 90%;
+        margin-top: 8rem;
+    }
+
+    .hero .heroText {
+        align-items: center;
+        gap: 0.6rem;
+        padding-inline: 0.5rem;
+    }
+
+    .hero .heroText h1 {
+        font-size: 0.7cm;
+    }
+
+    .hero .heroText a {
+        align-self: flex-start;
+    }
+
+    section.About {
+        display: none;
+    }
+
+    .circle {
+        display: none;
+    }
+
+    main.services {
+        height: 700px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        display: none;
+    }
+
+    section#Me {
+        height: 400px;
+        position: relative;
+        top: 6.9cm;
+    }
+
+    section#Me h1 {
+        font-size: 1cm;
+    }
+
+    #Me a {
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 10px 30px;
+        background-color: var(--secondary-color);
+        color: var(--white);
+        border: 3px solid crimson;
+        border-radius: 12px;
+        font-weight: 500;
+        font-family: sans-serif;
+        position: relative;
+        top: 7rem;
+        left: 8.3rem;
+        overflow: hidden;
+        transition: 200ms ease-in;
+    }
+
+    footer {
+        position: relative;
+        top: 6.9cm;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+    .hero .heroImg .imgholder {
+        width: 380px;
+        height: 90%;
+        margin-top: 6rem;
+        margin-left: 1rem;
+    }
+
+    .hero .heroText {
+        position: relative;
+        top: 5rem;
+    }
+
+    .circle {
+        position: relative;
+        top: -20rem;
+        left: 24rem;
+    }
+
+    .About .AboutImg .imgholder {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        top: 1rem;
+        left: 0;
+    }
+
+    main.services .Aboutwrapper {
+        position: relative;
+        top: -1rem;
+        left: -2rem;
+    }
+
+    main.services {
+        height: 550px;
+    }
+
+    section#Me {
+        height: 300px;
+        position: relative;
+        top: 0;
+    }
+
+    #Me a {
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 10px 30px;
+        background-color: var(--secondary-color);
+        color: var(--white);
+        border: 3px solid crimson;
+        border-radius: 12px;
+        font-weight: 500;
+        font-family: sans-serif;
+        position: relative;
+        top: 7rem;
+        left: 21rem;
+        overflow: hidden;
+        transition: 200ms ease-in;
+    }
+
+    .About .AboutText p {
+        line-height: 1.2rem;
+        margin-left: -0.2rem;
+    }
+}

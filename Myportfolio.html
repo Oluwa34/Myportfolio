@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Myportfolio.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <nav class="navbar">
+        <a href="#" class="logo">CisMAR</a>
+        <ul>
+            <li><a href="Myportfolio.html">Home</a></li>
+            <li><a href="Aboutme.html">About me</a></li>
+            <li><a href="services.html">My projects</a></li>
+            <li><a href="contactme.html">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="show">
+            <i class="ri-menu-2-line"></i>
+        </div>
+    </nav>
+    <nav class="mobile-navbar">
+        <header>
+            <div class="top">
+                <a href="#" class="logo">CisMAR</a>
+                <div class="hamburger" id="hide">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+            <ul>
+                <li><a href="Myportfolio.html">Home</a></li>
+                <li><a href="Aboutme.html">About me</a></li>
+                <li><a href="services.html">My projects</a></li>
+                <li><a href="contactme.html">Contact</a></li>
+            </ul>
+        </header>
+    </nav>
+    <main class="hero">
+        <div class="heroText">
+            <i>cismar</i>
+            <h1><b>Welcome To My Wall</b></h1>
+            <p>Ikwunne <span style="color: crimson;">Chidubem</span></p>
+            <p>A Frontend/Backend Web Developer, I Can Design A <br>Beautiful Website That Can Work Across Every
+                Browser <br>And Will Be As Fast As Possible, Let's Give You <br>The Best Which You Deserved.</p>
+            <a href="#Me">Let's start</a>
+        </div>
+        <div class="heroImg">
+            <div class="imgholder">
+                <img src="joshua.jpg" alt="">
+            </div>
+        </div>
+        <div class="circle">
+            </dv>
+    </main>
+    <hr>
+    <section class="About">
+        <div class="AboutImg">
+            <div class="imgholder">
+                <img src="josh.jpg" alt="">
+            </div>
+        </div>
+        <div class="AboutText">
+            <h1>About Me</h1>
+            <h3>Web <span style="color: crimson;">Developer</span></h3>
+            <p>I am a front-end/back-end web developer, I can provide clean code <br>and pixels perfect designs, I also
+                make the
+                website
+                more & <br>more interactive with web animations, A responsive design <br>makes your website accessible
+                to all
+                users,
+                regardlesss of their device. </p>
+
+            <button>Let's talk</button>
+        </div>
+    </section>
+    <main class="services">
+        <h1>My services</h1>
+        <div class="Aboutwrapper">
+            <div class="pro">
+                <i class="ri-menu-line"></i>
+                <h3>Web Development</h3>
+                <p>Every website should be built with <br>two primary goals firstly, it needs <br>to work across all
+                    devices
+                    secondly, <br>it needs to be fast as possible.</p>
+                <button>Read More</button>
+            </div>
+            <div class="pro">
+                <i class="ri-user-line"></i>
+                <h3>Web Development</h3>
+                <p>Every website should be built with <br>two primary goals firstly, it needs <br>to work across all
+                    devices
+                    secondly, <br>it needs to be fast as possible.</p>
+                <button>Read More</button>
+            </div>
+            <div class="pro">
+                <i class="ri-notification-4-line"></i>
+                <h3>Web Development</h3>
+                <p>Every website should be built with <br>two primary goals firstly, it needs <br>to work across all
+                    devices
+                    secondly, <br>it needs to be fast as possible.</p>
+                <button>Read More</button>
+            </div>
+        </div>
+    </main>
+    <section id="Me">
+        <h1>I Can Get You A Beautiful Responsive Website.</h1>
+        <a href="https://instagram.com/oluw.a519?igshid=ZGUzMzM3NWJiOQ==">Hire Me</a>
+    </section>
+    <hr>
+    <footer>
+        <div class="copyright">
+            <p>Copyright &copy; 2023 Cismar-tech</p>
+        </div>
+    </footer>
+
+    <script>
+        //DOM selection
+        const menuShowbtn = document.getElementById("show"),
+            menuClosebtn = document.getElementById("hide"),
+            mobileNav = document.querySelector(".mobile-navbar");
+
+        const navlinks = document.querySelectorAll(".mobile-navbar header ul a");
+
+        // click
+        //Showing mobile nav
+        menuShowbtn.addEventListener("click", () => {
+            mobileNav.style.left = "0";
+        });
+        const closeNav = () => {
+            mobileNav.style.left = "-100%";
+        }
+        //Hiding Mobile Nav
+        menuClosebtn.addEventListener("click", closeNav);
+
+        navlinks.forEach(navlink => {
+            navlink.addEventListener("click", closeNav);
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="services.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">CisMAR</a>
+        <ul>
+            <li><a href="Myportfolio.html">Home</a></li>
+            <li><a href="Aboutme.html">About me</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contactme.html">Contact me</a></li>
+        </ul>
+        <div class="hamburger" id="show">
+            <i class="ri-menu-2-line"></i>
+        </div>
+    </nav>
+    <nav class="mobile-navbar">
+        <header>
+            <div class="top">
+                <a href="#" class="logo">CisMAR</a>
+                <div class="hamburger" id="hide">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+            <ul>
+                <li><a href="Myportfolio.html">Home</a></li>
+                <li><a href="Aboutme.html">About me</a></li>
+                <li><a href="services.html">My projects</a></li>
+                <li><a href="contactme.html">Contact</a></li>
+            </ul>
+        </header>
+    </nav>
+    <div class="project">
+        <ul class="myul">
+            <li>
+                <div class="fir">
+                    <a href="land.html"><i class="ri-file-pdf-fill"></i></a>
+                </div>
+            </li>
+            <li>
+                <div class="sec">
+                    <a href="Lad2.html"><i class="ri-file-pdf-fill"></i></a>
+                </div>
+            </li>
+            <li>
+                <div class="third">
+                    <a href="myPro.html"><i class="ri-file-pdf-fill"></i></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        //DOM selection
+        const menuShowbtn = document.getElementById("show"),
+            menuClosebtn = document.getElementById("hide"),
+            mobileNav = document.querySelector(".mobile-navbar");
+
+        const navlinks = document.querySelectorAll(".mobile-navbar header ul a");
+
+        // click
+        //Showing mobile nav
+        menuShowbtn.addEventListener("click", () => {
+            mobileNav.style.left = "0";
+        });
+        const closeNav = () => {
+            mobileNav.style.left = "-100%";
+        }
+        //Hiding Mobile Nav
+        menuClosebtn.addEventListener("click", closeNav);
+
+        navlinks.forEach(navlink => {
+            navlink.addEventListener("click", closeNav);
+        })
+    </script>
+
+</body>
+
+</html>
